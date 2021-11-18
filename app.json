@@ -8,7 +8,7 @@
     "splash": {
       "image": "./assets/images/OrangeJustice.png",
       "resizeMode": "contain",
-      "backgroundColor": "#fff",
+      "backgroundColor": "#fff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -23,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/TakeTheL.png",
         "backgroundColor": "#fff"
-      }
+      },
+      "package": "com.juliennesbey.FortniteItemShop"
     },
     "web": {
       "favicon": "./assets/images/TakeTheL.png"
