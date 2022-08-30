@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "651642046118",
+    "project_id": "fortnite-item-shop-2c5e1",
+    "storage_bucket": "fortnite-item-shop-2c5e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:651642046118:android:f90047123c7239c2bbd667",
+        "android_client_info": {
+          "package_name": "com.juliennesbey.fortniteitemshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "651642046118-arv726so9bgkonr8i4ltscl7letfg111.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkmBy7D5zYKSxWRnFfg6K_nWLP7hziP40"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "651642046118-arv726so9bgkonr8i4ltscl7letfg111.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

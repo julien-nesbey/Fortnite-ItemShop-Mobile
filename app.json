@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "Fortnite Item Shop",
+    "name": "Fortnite - Shop & Upcoming",
     "slug": "FortniteItemShop",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/TakeTheL.png",
+    "icon": "./src/assets/images/TakeTheL.png",
     "splash": {
-      "image": "./assets/images/OrangeJustice.png",
+      "image": "./src/assets/images/OrangeJustice.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -23,13 +23,13 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/TakeTheL.png",
+        "foregroundImage": "./src/assets/images/TakeTheL.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.juliennesbey.FortniteItemShop"
     },
     "web": {
-      "favicon": "./assets/images/TakeTheL.png"
+      "favicon": "./src/assets/images/TakeTheL.png"
     }
   }
 }
