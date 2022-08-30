@@ -1,41 +1,19 @@
-import { StyleSheet, Dimensions, StatusBar } from "react-native";
+import { StyleSheet } from "react-native";
 
-const { width, height } = Dimensions.get("window");
-const barHeight = StatusBar.currentHeight;
 
 const styles = StyleSheet.create({
-	container: {
-		width: width,
-		height: height / 2.85,
+	container:{
+		flex: 1,
+		width: "100%"
 	},
-	box: {
-		position: "absolute",
-		width: "100%",
-		alignItems: "center",
+	box:{
+		width: "90%",
+		alignSelf: "center",
+		margin: 10
 	},
 	image:{
-		width: 200,
-		height: 200,
-	},
-	info: {
-		justifyContent: "center",
-		alignItems: "center",
-	},
-	title: {
-		fontSize: 24,
-	},
-	cost: {
-		fontSize: 16,
-	},
-	newItem: {
-		backgroundColor: "yellow",
-		borderRadius: 10,
-		padding: 5,
-		position: "absolute",
-		left: 10,
-		top: 40,
-		fontSize: 30,
-		transform: [{rotate: "-30deg"}]
+		width: "100%",
+		alignSelf: "center",
 	}
 });
 

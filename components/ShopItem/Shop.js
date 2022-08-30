@@ -1,11 +1,14 @@
 import React from 'react'
-import { View, Text, Image, ActivityIndicator } from 'react-native'
+import { View, Text, Image } from 'react-native'
+import {Card, ActivityIndicator, Colors, Title} from "react-native-paper";
 import styles from "./Styles"
-
+import {useTheme, useNavigation} from "@react-navigation/native"
 const Shop = (props) => {
 
 
-	const { name, cost, rarity, isNew, image, loading } = props;
+	const { id, name, cost, rarity, series, image } = props;
+	const {colors} = useTheme();
+	const navigation = useNavigation();
 
 	let bgColor = "#fff";
 
@@ -23,22 +26,24 @@ const Shop = (props) => {
 
 	return (
 		<View style={styles.container}>
-			<View style={[styles.box, {backgroundColor: bgColor}]} >
-
-			{loading ? <ActivityIndicator size="large" /> :
-				<Image
-					source={{uri: image}}
-					style={styles.image}
+			<Card
+				style={[styles.box, {backgroundColor: colors.card}]}
+				onPress={() => navigation.navigate("ItemDetails", {id: id})}
+			>
+				<Card.Title
+					title={name}
+					titleStyle={{fontSize: 26, color: colors.text}}
+					titleNumberOfLines={1}
+					subtitle={series?.toUpperCase() || rarity.toUpperCase()}
+					subtitleStyle={[{fontSize: 16, color: bgColor}]}
 				/>
-			}
-
-				{isNew === true && <Text style={[styles.newItem, {color: bgColor}]}>New</Text>}
-
-				<View style={styles.info}>
-					<Text style={styles.title}>{name}</Text>
-					<Text style={styles.cost}>{cost}Vbucks</Text>
-				</View>
-			</View>
+				<Card.Content>
+					<Title style={{fontSize: 16, color: colors.text}}>{`${cost}Vbucks`}</Title>
+				</Card.Content>
+				<Card.Cover
+					source={{uri: image}}
+					style={[styles.image, {backgroundColor: bgColor}]}/>
+			</Card>
 		</View>
 	)
 }

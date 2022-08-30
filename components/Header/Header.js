@@ -1,11 +1,20 @@
 import React from 'react'
 import { View, Text, Image, StyleSheet, Dimensions, StatusBar } from 'react-native'
+import { Feather } from "@expo/vector-icons";
+import {useNavigation, useTheme} from "@react-navigation/native";
 
 const { width, height } = Dimensions.get("window");
 
-const Header = () => {
+const Header = ({onPress}) => {
+	const navigation = useNavigation();
+	const {colors} = useTheme();
 	return (
-		<View style={styles.container}>
+		<View style={[styles.container, {backgroundColor: colors.background}]}>
+			<Feather
+				name="arrow-left"
+				size={32}
+				onPress={() => onPress()}
+				style={{alignSelf: "center"}} />
 			<Image
 				source={require("../../assets/images/title.png")}
 				style={styles.image}
@@ -16,10 +25,11 @@ const Header = () => {
 
 const styles = StyleSheet.create({
 	container: {
+		flexDirection: "row",
 		width: "100%",
 		height: width / 6,
-		alignItems: "center",
-		backgroundColor: "red",
+		paddingHorizontal: 10,
+		justifyContent: "space-between",
 	},
 	image: {
 		top: 15.9 * -StatusBar.currentHeight,

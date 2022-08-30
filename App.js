@@ -1,24 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Platform, Alert } from 'react-native';
+import React from 'react';
+import { View, StatusBar, AsyncStorage } from 'react-native';
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import { Provider } from "react-redux";
 
-import ShopList from "./components/ShopList/ShopList";
+//Navigation
+import Navigation from "./components/Navigation/Navigation";
+
+//Redux
+import reducers from "./redux/reducers/index.reducer";
+var middlewares = applyMiddleware(thunk);
+const store = createStore(reducers, middlewares);
 
 const App = () => {
-
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" translucent={false} />
-      <ShopList />
+    <View style={{flex: 1, justifyContent: "center"}}>
+      <Provider store={store}>
+        <StatusBar style="auto"/>
+        <Navigation/>
+      </Provider>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export default App;
